@@ -20,25 +20,28 @@ public class StudentList {
             if (student.equals(i)) {
                 return true;
             }
-        }return false;
+        }
+        return false;
     }
 
     //adds student to the list if there is enough space. returns true if added; otherwise, returns false.
-    public boolean addStudent(Student student){
-        if (currentNumberOfStudentsInArray < maxNumberIntArray){
-            students[currentNumberOfStudentsInArray+1] = student;
+    public boolean addStudent(Student student) {
+        if (currentNumberOfStudentsInArray < maxNumberIntArray) {
+            students[currentNumberOfStudentsInArray + 1] = student;
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
-
-    public void printInfo() {
-        for (int i =0; i < students.length; i++){
-            if (students[i]!= null){
-                System.out.println(students[i].toString());
+    @Override
+    public String toString() {
+        String list = null;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] != null) {
+                 list = students[i].toString();
             }
         }
+        return list;
     }
 }
