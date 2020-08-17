@@ -14,6 +14,10 @@ public class StudentList {
         this.currentNumberOfStudentsInArray = currentNumberOfStudentsInArray;
     }
 
+    public int getCurrentNumberOfStudentsInArray() {
+        return currentNumberOfStudentsInArray;
+    }
+
     //checks to see if student already exists in list.
     public boolean contains(Student student) {
         for (int i = 0; i < this.students.length; i++) {
