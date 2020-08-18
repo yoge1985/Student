@@ -15,7 +15,7 @@ public class Course {
     public Course(String title, String shortTitle, int maxClassSize) {
         this.title = title;
         this.shortTitle = shortTitle;
-        maxClassSize = maxClassSize;
+        this.maxClassSize = maxClassSize;
         this.classList = new StudentList(maxClassSize);
         this.waitList = new StudentList(MAX_SIZE_WAIT_LIST);
     }
@@ -24,7 +24,7 @@ public class Course {
     public void register(Student student){
         if (classList.contains(student)){
             System.out.println(student.toString() + " already is registered to " + shortTitle);
-        }else if (maxClassSize > classList.getCurrentNumberOfStudentsInArray()){
+        }else if (maxClassSize-1 > classList.getCurrentNumberOfStudentsInArray()){
             classList.addStudent(student);
             System.out.println(student.toString() + " has been added to " + shortTitle);
         }else if (MAX_SIZE_WAIT_LIST > waitList.getCurrentNumberOfStudentsInArray()){

@@ -11,7 +11,7 @@ public class StudentList {
     public StudentList(int maxNumberIntArray) {
         this.students = new Student[maxNumberIntArray];
         this.maxNumberIntArray = maxNumberIntArray;
-        this.currentNumberOfStudentsInArray = currentNumberOfStudentsInArray;
+        this.currentNumberOfStudentsInArray = 0;
     }
 
     public int getCurrentNumberOfStudentsInArray() {
@@ -32,6 +32,7 @@ public class StudentList {
     public boolean addStudent(Student student) {
         if (currentNumberOfStudentsInArray < maxNumberIntArray) {
             students[currentNumberOfStudentsInArray + 1] = student;
+            currentNumberOfStudentsInArray++;
             return true;
         } else {
             return false;
