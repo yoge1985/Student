@@ -1,15 +1,27 @@
 package Student;
 
+import Course.Course;
+import Course.CourseList;
+
 public class Student {
 
     private String firstName;
     private String lastName;
     private int number;
+    private CourseList courseList;
 
     public Student(String firstName, String lastName, int number) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.number = number;
+        this.courseList = new CourseList();
+    }
+    public void addCourse(Course course){
+        courseList.addCourse(course);
+    }
+
+    public String getCourseListString(){
+        return "student" + toString() + " is registered to:\n" + courseList.getAllTitles();
     }
 
 

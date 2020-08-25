@@ -12,34 +12,34 @@ public class Main {
 //        Student s3 = new Student("Natalya", "Simonova", 123003);
 //        Student s4 = new Student("Boris", "Grishenko", 123004);
 //
-//        StudentList studentList = new StudentList(3);
+//        StudentList l1 = new StudentList(3);
 //        boolean canAdd = false;
-//        canAdd = studentList.addStudent(s1);
+//        canAdd = l1.addStudent(s1);
 //        if (!canAdd)
 //            System.out.println("Cannot add student: " + s1);
 //
-//        System.out.println(studentList);
+//        System.out.println(l1);
 //
-//        if (studentList.contains(s1))
+//        if (l1.contains(s1))
 //            System.out.println("The list already contains: " + s1 + "\n");
 //
-//        canAdd = studentList.addStudent(s2);
+//        canAdd = l1.addStudent(s2);
 //        if (!canAdd)
 //            System.out.println("Cannot add student: " + s2);
 //
-//        System.out.println(studentList);
+//        System.out.println(l1);
 //
-//        canAdd = studentList.addStudent(s3);
+//        canAdd = l1.addStudent(s3);
 //        if (!canAdd)
 //            System.out.println("Cannot add student: " + s3);
 //
-//        System.out.println(studentList);
+//        System.out.println(l1);
 //
-//        canAdd = studentList.addStudent(s4);
+//        canAdd = l1.addStudent(s4);
 //        if (!canAdd)
 //            System.out.println("Cannot add student: " + s4);
 //
-//        System.out.println(studentList);
+//        System.out.println(l1);
 
         Student s1 = new Student("Miranda", "Frost", 123001);
         Student s2 = new Student("Mister", "Bullion", 123002);
@@ -65,7 +65,6 @@ public class Main {
         Course comp2140 = new Course("Data Structures and Algorithms", "COMP2140", 4);
         Course comp2150 = new Course("Object Orientation", "COMP2150", 4);
         Course comp3350 = new Course("Software Engineering 1", "COMP3350", 3);
-
 
         comp1010.register(s1);
         comp1010.register(s2);
@@ -103,6 +102,8 @@ public class Main {
         comp3350.register(s3);
 
         //Printing the list of courses for s3:
-//        System.out.println("\n" + s3.getCourseListString());
+        System.out.println("\n" + s3.getCourseListString());
+
+
     }
 }

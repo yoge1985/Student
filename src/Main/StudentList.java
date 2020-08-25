@@ -9,9 +9,9 @@ public class StudentList {
     private int currentNumberOfStudentsInArray;
 
     public StudentList(int maxNumberIntArray) {
-        this.students = new Student[maxNumberIntArray];
-        this.maxNumberIntArray = maxNumberIntArray;
         this.currentNumberOfStudentsInArray = 0;
+        this.maxNumberIntArray = maxNumberIntArray;
+        this.students = new Student[maxNumberIntArray];
     }
 
     public int getCurrentNumberOfStudentsInArray() {
@@ -31,7 +31,7 @@ public class StudentList {
     //adds student to the list if there is enough space. returns true if added; otherwise, returns false.
     public boolean addStudent(Student student) {
         if (currentNumberOfStudentsInArray < maxNumberIntArray) {
-            students[currentNumberOfStudentsInArray + 1] = student;
+            students[currentNumberOfStudentsInArray] = student;
             currentNumberOfStudentsInArray++;
             return true;
         } else {
@@ -42,10 +42,10 @@ public class StudentList {
     @Override
     public String toString() {
         String list = null;
-        for (int i = 0; i < students.length; i++) {
-            if (students[i] != null) {
-                 list = students[i].toString();
-            }
+
+        for (int i = 0; i < currentNumberOfStudentsInArray; i++) {
+
+            list = students[i].toString();
         }
         return list;
     }

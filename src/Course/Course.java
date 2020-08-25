@@ -24,7 +24,7 @@ public class Course {
     public void register(Student student){
         if (classList.contains(student)){
             System.out.println(student.toString() + " already is registered to " + shortTitle);
-        }else if (maxClassSize-1 > classList.getCurrentNumberOfStudentsInArray()){
+        }else if (maxClassSize > classList.getCurrentNumberOfStudentsInArray()){
             classList.addStudent(student);
             System.out.println(student.toString() + " has been added to " + shortTitle);
         }else if (MAX_SIZE_WAIT_LIST > waitList.getCurrentNumberOfStudentsInArray()){
@@ -42,6 +42,6 @@ public class Course {
     @Override
     public String
     toString() {
-        return getTitles() + "\n " + classList.toString() + "\n" + waitList.toString();
+        return getTitles() + "\n " + classList.toString() + "\n" + waitList;
     }
 }
