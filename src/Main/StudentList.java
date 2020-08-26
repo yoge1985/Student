@@ -41,12 +41,12 @@ public class StudentList {
 
     @Override
     public String toString() {
-        String list = null;
 
-        for (int i = 0; i < currentNumberOfStudentsInArray; i++) {
+        String studentDetails = " ";
 
-            list = students[i].toString();
+        for (int i = 0; i < getCurrentNumberOfStudentsInArray(); i++) {
+            studentDetails += "\n" + students[i].toString();
         }
-        return list;
+        return studentDetails;
     }
 }

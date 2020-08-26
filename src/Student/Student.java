@@ -21,7 +21,7 @@ public class Student {
     }
 
     public String getCourseListString(){
-        return "student" + toString() + " is registered to:\n" + courseList.getAllTitles();
+        return "student" + toString() + " is registered to:\n" + courseList;
     }
 
 

@@ -9,7 +9,7 @@ public class CourseList {
     public CourseList() {
 
         this.currentNumberOfCoursesInList = 0;
-        this.courses = new Course[currentNumberOfCoursesInList];
+        this.courses = new Course[MAX_COURSES_FOR_STUDENT];
     }
 
     //returns true if the course is already in the list. false if not.
@@ -32,18 +32,18 @@ public class CourseList {
 
     public String getAllTitles(){
         String list = null;
-        for (int i = 0; i < courses.length; i++){
-            list = courses[i].getTitles();
+        for (int i = 0; i < currentNumberOfCoursesInList; i++){
+            list += courses[i].getTitles();
         }
         return list;
     }
 
     @Override
     public String toString() {
-        String courseList = null;
-        for (int i = 0; i < courses.length; i++){
-            courseList = courses[i].toString();
+        String listOfCourses = " ";
+        for (int i = 0; i < currentNumberOfCoursesInList; i++){
+            listOfCourses += "\n" + courses[i].getTitles();
         }
-        return courseList;
+        return listOfCourses;
     }
 }
