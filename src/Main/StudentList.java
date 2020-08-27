@@ -48,7 +48,7 @@ public class StudentList {
         for (int i = 0; i < students.length; i++){
             if (students[i] != (student)){
                 studentsList.add(students[i]);
-                anotherArray = studentsList.toArray();
+                anotherArray = studentsList.toArray(anotherArray);
             }
         }
     }
