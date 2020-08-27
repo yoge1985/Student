@@ -36,6 +36,12 @@ public class Course {
         }
 
     }
+
+    public void withdraw(Student student){
+        if (classList.contains(student)){
+            classList.removeStudent(student);
+        }
+    }
     public String getTitles(){
         return shortTitle + " - " + title;
     }

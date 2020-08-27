@@ -2,6 +2,9 @@ package Main;
 
 import Student.Student;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StudentList {
 
     private Student[] students;
@@ -36,6 +39,17 @@ public class StudentList {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void removeStudent(Student student){
+        List<Student> studentsList = new ArrayList<Student>();
+        Student[]anotherArray = new Student[studentsList.size()];
+        for (int i = 0; i < students.length; i++){
+            if (students[i] != (student)){
+                studentsList.add(students[i]);
+                anotherArray = studentsList.toArray();
+            }
         }
     }
 

@@ -104,6 +104,9 @@ public class Main {
         //Printing the list of courses for s3:
         System.out.println("\n" + s3.getCourseListString());
 
+        comp1020.withdraw(s3);
+        System.out.println("\n" + comp1020);
+
 
     }
 }
