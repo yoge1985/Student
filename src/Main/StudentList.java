@@ -23,8 +23,8 @@ public class StudentList {
 
     //checks to see if student already exists in list.
     public boolean contains(Student student) {
-        for (int i = 0; i < this.students.length; i++) {
-            if (student.equals(i)) {
+        for (int i = 0; i < currentNumberOfStudentsInArray; i++) {
+            if (students[i].equals(student)) {
                 return true;
             }
         }
@@ -41,15 +41,17 @@ public class StudentList {
             return false;
         }
     }
-
+    //removes student from list
     public void removeStudent(Student student){
         List<Student> studentsList = new ArrayList<Student>();
-        Student[]anotherArray = new Student[studentsList.size()];
-        for (int i = 0; i < students.length; i++){
+        Student[]anotherArray = new Student[students.length-1];
+        for (int i = 0; i < currentNumberOfStudentsInArray; i++){
             if (students[i] != (student)){
                 studentsList.add(students[i]);
-                anotherArray = studentsList.toArray(anotherArray);
+                students = studentsList.toArray(students);
             }
+
+//            students[i] = anotherArray[i];
         }
     }
 
@@ -59,7 +61,7 @@ public class StudentList {
         String studentDetails = " ";
 
         for (int i = 0; i < getCurrentNumberOfStudentsInArray(); i++) {
-            studentDetails += "\n" + students[i].toString();
+            studentDetails += "\n" + students[i];
         }
         return studentDetails;
     }

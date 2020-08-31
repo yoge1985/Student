@@ -106,6 +106,8 @@ public class Main {
 
         comp1020.withdraw(s3);
         System.out.println("\n" + comp1020);
+        System.out.println(s3.getCourseListString());
+
 
 
     }

@@ -40,8 +40,15 @@ public class Course {
     public void withdraw(Student student){
         if (classList.contains(student)){
             classList.removeStudent(student);
+            System.out.println("the student " + student + " has been removed from " + getTitles());
+        }else if (waitList.contains(student)){
+            waitList.removeStudent(student);
+            System.out.println("the student " + student + " has been removed from the waitlist of " + getTitles());
+        }else {
+            System.out.println("the student" + student + " is not on any list of " + getTitles());
         }
     }
+
     public String getTitles(){
         return shortTitle + " - " + title;
     }
@@ -50,6 +57,6 @@ public class Course {
     public String
     toString() {
 
-        return getTitles() + "\nclass list:\n " + classList + "\nwait list:\n" + waitList +"\n";
+        return getTitles() + "\nclass list:\n " + classList + "\nwait list:\n" + waitList;
     }
 }

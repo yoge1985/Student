@@ -20,6 +20,10 @@ public class Student {
         courseList.addCourse(course);
     }
 
+    public void removeCourse(Course course){
+
+    }
+
     public String getCourseListString(){
         return "student" + toString() + " is registered to:\n" + courseList;
     }
