@@ -39,9 +39,20 @@ public class Course {
 
     public void withdraw(Student student){
         if (classList.contains(student)){
+            //remove student from the class list
             classList.removeStudent(student);
             System.out.println("the student " + student + " has been removed from " + getTitles());
+            //remove the subject from the student's list of subjects
             student.removeCourse(this);
+            //add student on waiting list (if applicable) to the class list
+            if (waitList != null){
+                for (int i = 0; i < 1; i++){
+                    Student[] students = waitList.getStudents();
+                    Student students1 = students[i];
+                    classList.addStudent(students1);
+                    waitList.removeStudent(students1);
+                }
+            }
 
         }else if (waitList.contains(student)){
             waitList.removeStudent(student);

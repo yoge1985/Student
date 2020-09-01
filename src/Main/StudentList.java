@@ -50,9 +50,13 @@ public class StudentList {
                 studentsList.add(students[i]);
                 students = studentsList.toArray(students);
             }
-
 //            students[i] = anotherArray[i];
         }
+        currentNumberOfStudentsInArray--;
+    }
+
+    public Student[] getStudents() {
+        return students;
     }
 
     @Override
