@@ -41,6 +41,8 @@ public class Course {
         if (classList.contains(student)){
             classList.removeStudent(student);
             System.out.println("the student " + student + " has been removed from " + getTitles());
+            student.removeCourse(this);
+
         }else if (waitList.contains(student)){
             waitList.removeStudent(student);
             System.out.println("the student " + student + " has been removed from the waitlist of " + getTitles());

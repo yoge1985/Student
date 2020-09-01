@@ -1,10 +1,13 @@
 package Course;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CourseList {
 
     private final int MAX_COURSES_FOR_STUDENT = 100;
     private Course[] courses;
-    private int currentNumberOfCoursesInList;
+    public int currentNumberOfCoursesInList;
 
     public CourseList() {
 
@@ -30,6 +33,18 @@ public class CourseList {
         currentNumberOfCoursesInList++;
     }
 
+    //removes course from the list
+    public void removeCourse(Course course) {
+        List<Course> courseList = new ArrayList<Course>();
+        for (int i = 0; i < currentNumberOfCoursesInList; i++) {
+            if (courses[i] != (course)) {
+                courseList.add(courses[i]);
+            }
+        }
+        courses = courseList.toArray(courses);
+        currentNumberOfCoursesInList--;
+    }
+
     public String getAllTitles(){
         String list = null;
         for (int i = 0; i < currentNumberOfCoursesInList; i++){
@@ -41,8 +56,12 @@ public class CourseList {
     @Override
     public String toString() {
         String listOfCourses = " ";
-        for (int i = 0; i < currentNumberOfCoursesInList; i++){
-            listOfCourses += "\n" + courses[i].getTitles();
+        if(currentNumberOfCoursesInList == 0){
+            System.out.println("no courses in list");
+        }else {
+            for (int i = 0; i < currentNumberOfCoursesInList; i++) {
+                listOfCourses += "\n" + courses[i].getTitles();
+            }
         }
         return listOfCourses;
     }

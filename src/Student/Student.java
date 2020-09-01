@@ -22,6 +22,7 @@ public class Student {
 
     public void removeCourse(Course course){
 
+        courseList.removeCourse(course);
     }
 
     public String getCourseListString(){
