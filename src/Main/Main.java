@@ -7,40 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Student s1 = new Student("Miranda", "Frost", 123001);
-//        Student s2 = new Student("Mister", "Bullion", 123002);
-//        Student s3 = new Student("Natalya", "Simonova", 123003);
-//        Student s4 = new Student("Boris", "Grishenko", 123004);
-//
-//        StudentList l1 = new StudentList(3);
-//        boolean canAdd = false;
-//        canAdd = l1.addStudent(s1);
-//        if (!canAdd)
-//            System.out.println("Cannot add student: " + s1);
-//
-//        System.out.println(l1);
-//
-//        if (l1.contains(s1))
-//            System.out.println("The list already contains: " + s1 + "\n");
-//
-//        canAdd = l1.addStudent(s2);
-//        if (!canAdd)
-//            System.out.println("Cannot add student: " + s2);
-//
-//        System.out.println(l1);
-//
-//        canAdd = l1.addStudent(s3);
-//        if (!canAdd)
-//            System.out.println("Cannot add student: " + s3);
-//
-//        System.out.println(l1);
-//
-//        canAdd = l1.addStudent(s4);
-//        if (!canAdd)
-//            System.out.println("Cannot add student: " + s4);
-//
-//        System.out.println(l1);
-
         Student s1 = new Student("Miranda", "Frost", 123001);
         Student s2 = new Student("Mister", "Bullion", 123002);
         Student s3 = new Student("Natalya", "Simonova", 123003);
@@ -62,52 +28,43 @@ public class Main {
 
         Course comp1010 = new Course("Introductory Computer Science 1", "COMP1010", 6);
         Course comp1020 = new Course("Introductory Computer Science 2", "COMP1020", 5);
-        Course comp2140 = new Course("Data Structures and Algorithms", "COMP2140", 4);
         Course comp2150 = new Course("Object Orientation", "COMP2150", 4);
         Course comp3350 = new Course("Software Engineering 1", "COMP3350", 3);
 
         comp1010.register(s1);
+        comp2150.register(s1);
         comp1010.register(s2);
         comp1010.register(s3);
         comp1010.register(s4);
         comp1010.register(s5);
         comp1010.register(s6);
         comp1010.register(s7);
-        System.out.println("\n"+comp1010);
-
-        comp1020.register(s3);
-        comp1020.register(s8);
-        comp1020.register(s9);
-        comp1020.register(s10);
-        comp1020.register(s11);
-        comp1020.register(s12);
-        comp1020.register(s13);
-        comp1020.register(s14);
-        comp1020.register(s15);
-        comp1020.register(s16);
-        comp1020.register(s17);
-        comp1020.register(s18);
-        System.out.println("\n" + comp1020);
-
-        //Testing registering a second time
-        comp1010.register(s7);
+        comp1010.register(s8);
         System.out.println("\n" + comp1010);
 
-        comp1020.register(s9);
-        System.out.println("\n" + comp1020);
+        //Course list titles of s1:
+        System.out.println(s1.getCourseListString());
 
-        //Testing maximum number of courses
-        comp2140.register(s3);
-        comp2150.register(s3);
-        comp3350.register(s3);
+        //Testing withdraws
+        comp1010.withdraw(s10);
+        System.out.println("\n" + comp1010);
 
-        //Printing the list of courses for s3:
-        System.out.println("\n" + s3.getCourseListString());
+        comp1010.withdraw(s7);
+        System.out.println("\n" + comp1010);
 
-        comp1020.withdraw(s3);
-        System.out.println("\n" + comp1020);
-        System.out.println("================");
-        System.out.println(s3.getCourseListString());
+        comp1010.withdraw(s1);
+        System.out.println("\n" + comp1010);
+
+        comp1010.withdraw(s2);
+        System.out.println("\n" + comp1010);
+
+        //once more, printing the course list titles of s1
+        System.out.println(s1.getCourseListString());
+
+//        comp1020.withdraw(s3);
+//        System.out.println("\n" + comp1020);
+//        System.out.println("================");
+//        System.out.println(s3.getCourseListString());
 
 
 

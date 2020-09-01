@@ -45,12 +45,13 @@ public class Course {
             //remove the subject from the student's list of subjects
             student.removeCourse(this);
             //add student on waiting list (if applicable) to the class list
-            if (waitList != null){
+            if (waitList.getCurrentNumberOfStudentsInArray() > 0){
                 for (int i = 0; i < 1; i++){
                     Student[] students = waitList.getStudents();
                     Student students1 = students[i];
                     classList.addStudent(students1);
                     waitList.removeStudent(students1);
+                    System.out.println("the student " + students1 + " has been added to " + this);
                 }
             }
 
